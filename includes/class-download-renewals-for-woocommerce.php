@@ -67,12 +67,12 @@ class Download_Renewals_For_Woocommerce {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'DOWNLOAD_RENEWALS_FOR_WOOCOMMERCE_VERSION' ) ) {
-			$this->version = DOWNLOAD_RENEWALS_FOR_WOOCOMMERCE_VERSION;
-		} else {
-			$this->version = '1.0.0';
-		}
 		$this->plugin_name = 'download-renewals-for-woocommerce';
+		$this->version = '1.0.0';
+
+		if ( defined( 'DRWC_VERSION' ) ) {
+			$this->version = DRWC_VERSION;
+		}
 
 		$this->load_dependencies();
 		$this->set_locale();
