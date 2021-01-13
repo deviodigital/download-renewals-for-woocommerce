@@ -112,6 +112,12 @@ class Download_Renewals_For_Woocommerce {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-download-renewals-for-woocommerce-i18n.php';
 
 		/**
+		 * The file responsible for defining background functions that are used 
+		 * throughout the plugin.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/drwc-background-functions.php';
+
+		/**
 		 * The file responsible for defining core helper functions that are used 
 		 * throughout the plugin.
 		 */
