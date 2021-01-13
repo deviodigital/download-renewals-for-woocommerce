@@ -50,6 +50,8 @@ class WC_Order_Download_Expired extends WC_Email {
 		$this->template_plain = 'emails/plain/wc-order-download-expired.php';
 		$this->template_base  = DRWC_PRO_EMAIL_PATH . 'emails/templates/';
 
+		// Action to which we hook onto to send the email.
+		add_action( 'drwc_download_expired_trigger_email', array( $this, 'trigger' ), 9 );
 		parent::__construct();
 
 		if ( ! $this->recipient ) {
@@ -97,7 +99,7 @@ class WC_Order_Download_Expired extends WC_Email {
 			'email_heading' => $this->get_heading(),
 			'sent_to_admin' => false,
 			'plain_text'    => false,
-			'email'			    => $this
+			'email'			=> $this
 		), '', $this->template_base );
 	}
 

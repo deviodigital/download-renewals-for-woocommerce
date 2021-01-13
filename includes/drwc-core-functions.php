@@ -20,7 +20,7 @@
 function drwc_check_order_for_downloads( $order_id = '' ) {
 
 	// Get order data - '122' test ID.
-	$order = wc_get_order( 101 );
+	$order = wc_get_order( 122 );
 
 	// Order ID.
 	$order_id = $order->get_id();
@@ -42,19 +42,20 @@ function drwc_check_order_for_downloads( $order_id = '' ) {
     // Downloadable items exist.
 	if ( $downloadable_items ) {
 		// Check downloadable items for expired downloads.
-		drwc_check_downloadable_items( $downloadable_items );
+		drwc_check_downloadable_items( $order_id, $downloadable_items );
 	}
 }
-//add_action( 'init', 'drwc_check_order_for_downloads' );
+add_action( 'init', 'drwc_check_order_for_downloads' );
 
 /**
  * Check downloadable items for expired downloads.
  * 
  * @since  1.0
- * @param  array  $downloadable_items
+ * @param  array $order_id
+ * @param  array $downloadable_items
  * @return void
  */
-function drwc_check_downloadable_items( $downloadable_items ) {
+function drwc_check_downloadable_items( $order_id, $downloadable_items ) {
 	// Loop through downloadable items.
 	foreach ( $downloadable_items as $item ) {
 		// Check if download is expired.
@@ -63,8 +64,20 @@ function drwc_check_downloadable_items( $downloadable_items ) {
 		// Download is expired.
 		if ( $is_expired ) {
 			// Do something for expired downloads.
+			drwc_send_woocommerce_email( $order_id );
 		}
 	}
+}
+
+/**
+ * Send WooCommerce email to customer about expired download
+ * 
+ * @return void
+ */
+function drwc_send_woocommerce_email( $order_id ) {
+	// Send the Download Expired email.
+	$email = new WC_Order_Download_Expired();
+	$email->trigger( $order_id );
 }
 
 /**

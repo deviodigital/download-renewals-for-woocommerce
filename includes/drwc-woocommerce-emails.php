@@ -17,7 +17,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Class Download_Renewals_for_WooCommerce_WC_Emails
  *
- * @since 1.1
+ * @since 1.0
  */
 class Download_Renewals_for_WooCommerce_WC_Emails {
 	/**
