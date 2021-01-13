@@ -124,6 +124,12 @@ class Download_Renewals_For_Woocommerce {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/drwc-core-functions.php';
 
 		/**
+		 * The file responsible for defining functions that are used to create  
+		 * WooCommerce emails used throughout the plugin.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/drwc-woocommerce-emails.php';
+
+		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-download-renewals-for-woocommerce-admin.php';
