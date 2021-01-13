@@ -112,6 +112,12 @@ class Download_Renewals_For_Woocommerce {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-download-renewals-for-woocommerce-i18n.php';
 
 		/**
+		 * The file responsible for defining all helper functions that are used 
+		 * throughout the plugin
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/download-renewals-for-woocommerce-helper-functions.php';
+
+		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-download-renewals-for-woocommerce-admin.php';
