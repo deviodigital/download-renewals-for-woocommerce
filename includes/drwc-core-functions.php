@@ -33,6 +33,11 @@ function drwc_is_download_expired( $order_id ) {
     // Get downloadable items.
 	$downloadable_items = $order->get_downloadable_items();
 
+	// Downloadable items do not exist.
+	if ( ! $downloadable_items ) {
+		return null;
+	}
+
     // Downloadable items exist.
 	if ( $downloadable_items ) {
 		// Loop through products.
@@ -52,8 +57,6 @@ function drwc_is_download_expired( $order_id ) {
 				return false;
 			}
 		}
-	} else {
-        return null;
-    }
+	}
 }
 //add_action( 'init', 'drwc_is_download_expired' );
