@@ -11,16 +11,42 @@
  */
 
 /**
+ * Check orders for expired downloads
+ * 
+ * @since  1.0
+ * @return void
+ */
+function drwc_check_orders_for_expired_downloads() {
+	// Get WooCommerce orders.
+	$orders = wc_get_orders( array( 'numberposts' => -1 ) );
+
+	// Loop through each WC_Order object
+	foreach( $orders as $order ) {
+		// Order ID.
+		$order_id = $order->get_id();
+
+		// Order status.
+		$order_status = $order->get_status();
+
+		// Only run for completed orders.
+		if ( 'completed' == $order_status ) {
+			// Check order for downloads.
+			drwc_check_order_for_downloads( $order_id );
+		}
+	}	
+}
+
+/**
  * Check for downloadable products in an order.
  * 
  * @since  1.0
  * @param  int  $order_id
  * @return bool|void
  */
-function drwc_check_order_for_downloads( $order_id = '' ) {
+function drwc_check_order_for_downloads( $order_id ) {
 
 	// Get order data - '122' test ID.
-	$order = wc_get_order( 122 );
+	$order = wc_get_order( $order_id );
 
 	// Order ID.
 	$order_id = $order->get_id();

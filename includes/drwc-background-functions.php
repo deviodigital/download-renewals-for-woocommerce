@@ -45,6 +45,6 @@ function drwc_schedule_cron_event() {
         wp_schedule_event( strtotime( '00:01:00' ), 'drwcDaily', 'drwc_run_cron_daily' );
     }
     // Hook into that action that'll fire every day.
-    add_action( 'drwc_run_cron_daily', 'drwc_THIS_FUNCTION_NAME_HAS_OUR_CUSTOM_SCRIPT_IN_IT' );
+    add_action( 'drwc_run_cron_daily', 'drwc_check_orders_for_expired_downloads' );
 }
-add_action( 'CHANGE', 'drwc_schedule_cron_event' );
+add_action( 'init', 'drwc_schedule_cron_event' );
