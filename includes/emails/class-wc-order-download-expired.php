@@ -21,9 +21,9 @@ if ( ! class_exists( 'WC_Email' ) ) {
 }
 
 /**
- * Class WC_Order_Driver_Assigned
+ * Class WC_Order_Download_Expired
  *
- * @since 1.1
+ * @since 1.0
  */
 class WC_Order_Download_Expired extends WC_Email {
 	/**
@@ -34,7 +34,7 @@ class WC_Order_Download_Expired extends WC_Email {
 	 */
 	function __construct() {
 		// Email slug we can use to filter other data.
-		$this->id          = 'drwc_driver_expired';
+		$this->id          = 'drwc_download_expired';
 		$this->title       = __( 'DRWC Download Expired', 'download-renewals-for-woocommerce' );
 		$this->description = __( 'An email sent to the customer when a downloadable item they\'ve purchased is expired', 'download-renewals-for-woocommerce' );
 
@@ -46,12 +46,12 @@ class WC_Order_Download_Expired extends WC_Email {
 		$this->subject = sprintf( _x( '[%s] A download you purchased has expired', 'default email subject for customers when a purchased download is expired', 'download-renewals-for-woocommerce' ), '{blogname}' );
 
 		// Template paths.
-		$this->template_html  = 'emails/wc-order-download-expired.php';
-		$this->template_plain = 'emails/plain/wc-order-download-expired.php';
+		$this->template_html  = 'wc-order-download-expired.php';
+		$this->template_plain = 'plain/wc-order-download-expired.php';
 		$this->template_base  = DRWC_PRO_EMAIL_PATH . 'emails/templates/';
 
 		// Action to which we hook onto to send the email.
-		add_action( 'drwc_download_expired_trigger_email', array( $this, 'trigger' ), 9 );
+		add_action( 'drwc_download_expired_trigger_email', array( $this, 'trigger' ) );
 		parent::__construct();
 
 		if ( ! $this->recipient ) {

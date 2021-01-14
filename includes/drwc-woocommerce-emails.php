@@ -15,6 +15,18 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
+ * Register action as one that sends emails
+ *
+ * @since  1.0
+ * @return array
+ */
+function drwc_woocommerce_email_action( $actions ) {
+    $actions[] = 'drwc_download_expired_trigger_email';
+    return $actions;
+}
+add_action( 'woocommerce_email_actions', 'drwc_woocommerce_ajax_email_action' );
+
+/**
  * Class Download_Renewals_for_WooCommerce_WC_Emails
  *
  * @since 1.0
@@ -39,7 +51,7 @@ class Download_Renewals_for_WooCommerce_WC_Emails {
 	 */
 	public function register_emails( $emails ) {
 		// Email classes.
-		require_once 'emails/class-wc-order-download-expired.php';
+		require_once DRWC_PRO_EMAIL_PATH . '/emails/class-wc-order-download-expired.php';
 		// Register emails.
 		$emails['WC_Order_Download_Expired']  = new WC_Order_Download_Expired();
 
@@ -47,15 +59,5 @@ class Download_Renewals_for_WooCommerce_WC_Emails {
 	}
 
 }
-
-/**
- * Load the WooCommerce emails.
- * 
- * @since  1.0
- * @return void
- */
-function drwc_load_woocommerce_emails() {
-    // Load the DRWC emails for WooCommerce.
-    new Download_Renewals_for_WooCommerce_WC_Emails();
-}
-add_action( 'woocommerce_init', 'drwc_load_woocommerce_emails' );
+// Load the DRWC emails for WooCommerce.
+new Download_Renewals_for_WooCommerce_WC_Emails();
