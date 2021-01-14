@@ -41,10 +41,10 @@ add_filter( 'cron_schedules', 'drwc_cron_schedules' );
  */
 function drwc_schedule_cron_event() {
     // Schedule cron event if it's not already scheduled.
-    if ( ! wp_next_scheduled( 'drwc_run_cron_daily' ) ) {
-        wp_schedule_event( strtotime( '00:01:00' ), 'drwcDaily', 'drwc_run_cron_daily' );
+    if ( ! wp_next_scheduled( 'drwc_check_orders_for_expired_downloads' ) ) {
+        wp_schedule_event( strtotime( '00:01:00' ), 'drwcDaily', 'drwc_check_orders_for_expired_downloads' );
     }
     // Hook into that action that'll fire every day.
-    add_action( 'drwc_run_cron_daily', 'drwc_check_orders_for_expired_downloads' );
+    add_action( 'drwc_check_orders_for_expired_downloads', 'drwc_check_orders_for_expired_downloads' );
 }
 add_action( 'init', 'drwc_schedule_cron_event' );
