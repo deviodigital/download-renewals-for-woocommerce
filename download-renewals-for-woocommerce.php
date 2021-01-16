@@ -8,16 +8,18 @@
  * @package           Download_Renewals_For_Woocommerce
  *
  * @wordpress-plugin
- * Plugin Name:       Download Renewals for WooCommerce
- * Plugin URI:        https://www.deviodigital.com/download-renewals-for-woocommerce-release-notes
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
- * Version:           1.0.0
- * Author:            Devio Digital
- * Author URI:        https://www.deviodigital.com
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       download-renewals-for-woocommerce
- * Domain Path:       /languages
+ * Plugin Name:          Download Renewals for WooCommerce
+ * Plugin URI:           https://www.deviodigital.com/download-renewals-for-woocommerce-release-notes
+ * Description:          This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Version:              1.0.0
+ * Author:               Devio Digital
+ * Author URI:           https://www.deviodigital.com
+ * License:              GPL-2.0+
+ * License URI:          http://www.gnu.org/licenses/gpl-2.0.txt
+ * Text Domain:          download-renewals-for-woocommerce
+ * Domain Path:          /languages
+ * WC requires at least: 3.5.0
+ * WC tested up to:      4.9.0
  */
 
 // If this file is called directly, abort.
