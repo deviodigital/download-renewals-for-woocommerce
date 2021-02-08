@@ -33,7 +33,7 @@ function drwc_check_orders_for_expired_downloads() {
 			// Check order for downloads.
 			drwc_check_order_for_downloads( $order_id );
 		}
-	}	
+	}
 }
 
 /**
@@ -47,9 +47,6 @@ function drwc_check_order_for_downloads( $order_id ) {
 
 	// Get order data - '122' test ID.
 	$order = wc_get_order( $order_id );
-
-	// Order ID.
-	$order_id = $order->get_id();
 
     // Get the customer ID.
     $customer_id = $order->get_user_id();
@@ -71,7 +68,6 @@ function drwc_check_order_for_downloads( $order_id ) {
 		drwc_check_downloadable_items( $order_id, $downloadable_items );
 	}
 }
-//add_action( 'init', 'drwc_check_order_for_downloads' );
 
 /**
  * Check downloadable items for expired downloads.
@@ -89,10 +85,37 @@ function drwc_check_downloadable_items( $order_id, $downloadable_items ) {
 
 		// Download is expired.
 		if ( $is_expired ) {
-			// Do something for expired downloads.
+			// Send WooCommerce email.
 			drwc_send_woocommerce_email( $order_id );
+			break;
 		}
 	}
+}
+
+/**
+ * Is download expired?
+ * 
+ * @param  array  $item
+ * @return bool
+ */
+function drwc_is_download_expired( $item ) {
+	// Access expires.
+	$access_expires = $item['access_expires'];
+	// Convert access expires to array.
+	$access_expires = json_decode( json_encode( $access_expires ), true );
+	// Expire date.
+	$expire_date = $access_expires['date'];
+
+	// Format the access expires date.
+	$dt   = new DateTime( $expire_date );
+	$date = $dt->format( 'm/d/Y' );
+
+	// Check if download is expired.
+	if ( strtotime( $date ) < strtotime( 'now' ) ) {
+		return true;
+	}
+
+	return null;
 }
 
 /**
@@ -114,30 +137,6 @@ function drwc_send_woocommerce_email( $order_id ) {
 				// Trigger our email.
 				$mail->trigger( $order_id );
 			}
-		 }
-	}
-
-}
-
-/**
- * Is download expired?
- * 
- * @param  array  $item
- * @return bool
- */
-function drwc_is_download_expired( $item ) {
-	// Access expires.
-	$access_expires = $item['access_expires'];
-	$access_expires = $access_expires->date;
-
-	// Format the access expires date.
-	$dt   = new DateTime( $access_expires );
-	$date = $dt->format( 'm/d/Y' );
-
-	// Check if download is expired.
-	if ( strtotime( $date ) < strtotime( 'now' ) ) {
-		return true;
-	} else {
-		return false;
+		}
 	}
 }
