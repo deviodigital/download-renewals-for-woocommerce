@@ -10,7 +10,7 @@
  * @wordpress-plugin
  * Plugin Name:          Download Renewals for WooCommerce
  * Plugin URI:           https://www.deviodigital.com/download-renewals-for-woocommerce-release-notes
- * Description:          This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:          Sell digital products and remind your customers when their downloads expire
  * Version:              1.0.0
  * Author:               Devio Digital
  * Author URI:           https://www.deviodigital.com
