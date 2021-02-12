@@ -30,6 +30,9 @@ if ( ! defined( 'WPINC' ) ) {
 // Current plugin version.
 define( 'DRWC_VERSION', '1.0.0' );
 
+// Define DRWC plugin name.
+$plugin_name = plugin_basename( __FILE__ );
+
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-download-renewals-for-woocommerce-activator.php
@@ -73,3 +76,17 @@ function run_download_renewals_for_woocommerce() {
 
 }
 run_download_renewals_for_woocommerce();
+
+/**
+ * Add settings link on plugin page
+ *
+ * @since 1.0.0
+ * @param array $links an array of links related to the plugin.
+ * @return array updatead array of links related to the plugin.
+ */
+function drwc_settings_link( $links ) {
+	$settings_link = '<a href="admin.php?page=drwc_settings">' . esc_attr__( 'Settings', ' download-renewals-for-woocommerce' ) . '</a>';
+	array_unshift( $links, $settings_link );
+	return $links;
+}
+add_filter( "plugin_action_links_$plugin_name", 'drwc_settings_link' );
