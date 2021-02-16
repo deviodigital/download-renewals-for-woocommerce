@@ -1,7 +1,7 @@
 === Download Renewals for WooCommerce ===
 Contributors: deviodigital
 Donate link: https://www.deviodigital.com
-Tags: woocommerce, renewals, subscription, recurring
+Tags: woocommerce, downloads, renewals, subscription, recurring
 Tested up to: 5.6
 Stable tag: 1.0
 License: GPLv2 or later
