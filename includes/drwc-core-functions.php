@@ -28,8 +28,11 @@ function drwc_check_orders_for_expired_downloads() {
 		// Order status.
 		$order_status = $order->get_status();
 
+		// Order statuses to check against.
+		$order_statuses = apply_filters( 'drwc_check_order_for_downloads_order_statuses', 'completed' );
+
 		// Check orders for downloads.
-		if ( 'completed' == $order_status || 'yes' === get_option( 'woocommerce_downloads_grant_access_after_payment' ) ) {
+		if ( in_array( $order_status, $order_statuses ) || 'yes' === get_option( 'woocommerce_downloads_grant_access_after_payment' ) ) {
 			// Check order for downloads.
 			drwc_check_order_for_downloads( $order_id );
 		}
