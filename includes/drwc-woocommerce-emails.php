@@ -20,7 +20,7 @@ if ( ! defined( 'WPINC' ) ) {
  * @since  1.0
  * @return array
  */
-function drwc_woocommerce_email_action( $actions ) {
+function drwc_woocommerce_ajax_email_action( $actions ) {
     $actions[] = 'drwc_download_expired_trigger_email';
     return $actions;
 }
