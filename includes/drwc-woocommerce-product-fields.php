@@ -14,6 +14,12 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+/**
+ * Add renewal price to product option group
+ * 
+ * @since  1.0
+ * @return void
+ */
 function drwc_downloadable_product_option_group() {
 	echo '<div class="options_group show_if_downloadable hidden">';
  
@@ -47,10 +53,10 @@ add_action( 'woocommerce_product_options_pricing', 'drwc_downloadable_product_op
  */
 function drwc_downloadable_product_save_fields( $id, $post ){
  
-    if ( ! empty( $_POST['super_product'] ) ) {
+    if ( ! empty( $_POST['drwc_renewal_price'] ) ) {
         update_post_meta( $id, 'drwc_renewal_price', $_POST['drwc_renewal_price'] );
     } else {
-        delete_post_meta( $id, 'super_product' );
+        delete_post_meta( $id, 'drwc_renewal_price' );
     }
 
 }
