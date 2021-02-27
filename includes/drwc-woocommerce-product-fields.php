@@ -29,14 +29,18 @@ function drwc_downloadable_product_option_group() {
         'class'             => 'short wc_input_price',
         'style'             => '',
         'wrapper_class'     => '',
-        'value'             => '', // if empty, retrieved from post meta where id is the meta_key
-        'id'                => 'drwc_renewal_price', // required
-        'name'              => 'drwc_renewal_price', //name will set from id if empty
-        'type'              => 'text',
+        'value'             => get_post_meta( get_the_ID(), 'drwc_renewal_price', true ),
+        'id'                => 'drwc_renewal_price',
+        'name'              => 'drwc_renewal_price',
+        'type'              => 'number',
         'desc_tip'          => '',
         'data_type'         => '',
-        'custom_attributes' => '', // array of attributes 
-        'description'       => ''
+        'description'       => '',
+        'custom_attributes' => array(
+            'step' => 'any',
+            'min'  => '0'
+        ),
+
     );
     
     woocommerce_wp_text_input( $args );
@@ -51,13 +55,14 @@ add_action( 'woocommerce_product_options_pricing', 'drwc_downloadable_product_op
  * @since  1.0
  * @return void
  */
-function drwc_downloadable_product_save_fields( $id, $post ){
- 
-    if ( ! empty( $_POST['drwc_renewal_price'] ) ) {
-        update_post_meta( $id, 'drwc_renewal_price', $_POST['drwc_renewal_price'] );
-    } else {
-        delete_post_meta( $id, 'drwc_renewal_price' );
-    }
-
+function drwc_downloadable_product_save_fields( $post_id ) {
+    // Get product.
+    $product = wc_get_product( $post_id );
+    // Get renewal price (if it's set).
+    $drwc_renewal_price = isset($_POST['drwc_renewal_price']) ? $_POST['drwc_renewal_price'] : '';
+    // Update product meta.
+    $product->update_meta_data( 'drwc_renewal_price', sanitize_text_field( $drwc_renewal_price ) );
+    // Save product.
+    $product->save();
 }
-add_action( 'woocommerce_process_product_meta', 'drwc_downloadable_product_save_fields', 10, 2 );
+add_action( 'woocommerce_process_product_meta', 'drwc_downloadable_product_save_fields', 9999 );
