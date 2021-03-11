@@ -145,6 +145,11 @@ class Download_Renewals_For_Woocommerce {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/drwc-woocommerce-product-fields.php';
 
 		/**
+		 * The file responsible for defining the custom WooCommerce renewal price change.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/drwc-woocommerce-renewal-price-change.php';
+
+		/**
 		 * The file responsible for defining the options in our admin Settings page.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/download-renewals-for-woocommerce-settings-page.php';

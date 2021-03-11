@@ -48,7 +48,7 @@ function drwc_check_orders_for_expired_downloads() {
  */
 function drwc_check_order_for_downloads( $order_id ) {
 
-	// Get order data - '122' test ID.
+	// Get order data.
 	$order = wc_get_order( $order_id );
 
     // Get the customer ID.
