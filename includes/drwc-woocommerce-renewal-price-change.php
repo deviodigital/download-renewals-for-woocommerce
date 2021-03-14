@@ -112,3 +112,22 @@ function drwc_update_renewal_price_in_cart( $cart ) {
 
 }
 add_action( 'woocommerce_before_calculate_totals', 'drwc_update_renewal_price_in_cart', 9999 );
+
+/**
+ * Alter product renewal price in mini cart
+ * 
+ * @since  1.0
+ * @return string $output
+ */
+function drwc_update_renewal_price_in_mini_cart( $output, $cart_item, $cart_item_key ) {
+  $product_id = $cart_item['product_id'];
+  // Renewal price.
+  $renewal_price = get_post_meta( $product_id, 'drwc_renewal_price', true );
+
+  if ( $renewal_price ) {
+    return sprintf( '<span class="quantity">%s &times; <span class="woocommerce-Price-amount amount">%s</span></span>', $cart_item['quantity'], wc_price( $renewal_price ) );
+  } else {
+    return $output;
+  }
+}
+add_filter('woocommerce_widget_cart_item_quantity', 'drwc_update_renewal_price_in_mini_cart', 10, 3 );
