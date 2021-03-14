@@ -40,7 +40,7 @@ function drwc_renewal_price_display( $price, $product ) {
 
     return $price;
 }
-//add_filter( 'woocommerce_get_price', 'drwc_renewal_price_display', 10, 2 );
+add_filter( 'woocommerce_get_price', 'drwc_renewal_price_display', 10, 2 );
 
 /**
  * Check if user has bought items
@@ -88,42 +88,22 @@ function sitecare_user_has_bought_items( $user_var = 0,  $product_ids = 0 ) {
  * @since  1.0
  * @return void
  */ 
-function drwc_renewal_price_in_cart( $cart ) {
+function drwc_update_renewal_price_in_cart( $cart ) {
  
-    if ( is_admin() && ! defined( 'DOING_AJAX' ) ) return;
+    // This is necessary for WC 3.0+
+    if ( is_admin() && ! defined( 'DOING_AJAX' ) )
+        return;
 
-    if ( did_action( 'woocommerce_before_calculate_totals' ) >= 2 ) return;
+    // Avoiding hook repetition (when using price calculations for example).
+    if ( did_action( 'woocommerce_before_calculate_totals' ) >= 2 )
+        return;
 
-    // IF CUSTOMER NOT LOGGED IN, DONT APPLY DISCOUNT.
-    if ( ! wc_current_user_has_role( 'customer' ) ) return;
-
-    // LOOP THROUGH CART ITEMS & APPLY 20% DISCOUNT.
-    foreach ( $cart->get_cart() as $cart_item_key => $cart_item ) {
-        $product = $cart_item['data'];
-        $price   = $product->get_price();
-        $cart_item['data']->set_price( $price * 0.80 );
-    }
-}
-
-/**
- * User purchase check
- * 
- * Display the renewal price if user previously purchased the product
- * 
- * @return string
- */
-function drwc_renewal_price_user_purchase_check() {
-
-    if ( ! is_user_logged_in() ) return;
-
-    $current_user = wp_get_current_user();
-    
-    // Display renewal price if customer previously bought the product.
-	if ( sitecare_user_has_bought_items( '', get_the_ID() ) ) {
-        if ( get_post_meta( get_the_ID(), 'drwc_renewal_price', true ) ) {
-            add_action( 'woocommerce_before_calculate_totals', 'drwc_renewal_price_in_cart', 9999 );
-            add_filter( 'woocommerce_get_price', 'drwc_renewal_price_display', 9999, 2 );
+    // Loop through cart items.
+    foreach ( $cart->get_cart() as $item ) {
+        if ( get_post_meta( $item['product_id'], 'drwc_renewal_price', true ) ) {
+            $item['data']->set_price( get_post_meta( $item['product_id'], 'drwc_renewal_price', true ) );
         }
-	}
+    }
+
 }
-add_action( 'plugins_loaded', 'drwc_renewal_price_user_purchase_check' );
+add_action( 'woocommerce_before_calculate_totals', 'drwc_update_renewal_price_in_cart', 9999 );

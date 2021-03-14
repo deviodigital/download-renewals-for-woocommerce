@@ -24,7 +24,7 @@ function drwc_downloadable_product_option_group() {
 	echo '<div class="options_group show_if_downloadable hidden">';
  
     $args = array(
-        'label'             => __( 'Renewal Price ', 'drwc' ) . '(' . get_woocommerce_currency_symbol() . ')', // Text in Label
+        'label'             => __( 'Renewal Price ', 'drwc' ) . '(' . get_woocommerce_currency_symbol() . ')',
         'placeholder'       => '',
         'class'             => 'short wc_input_price',
         'style'             => '',
