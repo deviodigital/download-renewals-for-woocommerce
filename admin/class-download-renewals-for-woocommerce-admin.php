@@ -61,8 +61,7 @@ class Download_Renewals_For_Woocommerce_Admin {
 	 */
 	public function enqueue_styles() {
 		// Plugin admin CSS.
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/download-renewals-for-woocommerce-admin.css', array(), $this->version, 'all' );
-
+		//wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/download-renewals-for-woocommerce-admin.css', array(), $this->version, 'all' );
 	}
 
 	/**
@@ -72,8 +71,7 @@ class Download_Renewals_For_Woocommerce_Admin {
 	 */
 	public function enqueue_scripts() {
 		// Plugin admin JS.
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/download-renewals-for-woocommerce-admin.js', array( 'jquery' ), $this->version, false );
-
+		//wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/download-renewals-for-woocommerce-admin.js', array( 'jquery' ), $this->version, false );
 	}
 
 }
