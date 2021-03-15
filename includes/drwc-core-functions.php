@@ -86,8 +86,11 @@ function drwc_check_downloadable_items( $order_id, $downloadable_items ) {
 		// Check if download is expired.
 		$is_expired = drwc_is_download_expired( $item );
 
+		// Check if email has already been sent.
+		$email_sent = get_post_meta( $order_id, 'drwc_download_expired_email_sent', true );
+
 		// Download is expired.
-		if ( $is_expired ) {
+		if ( $is_expired && ! $email_sent ) {
 			// Send WooCommerce email.
 			drwc_send_woocommerce_email( $order_id );
 			break;
@@ -139,6 +142,8 @@ function drwc_send_woocommerce_email( $order_id ) {
 			if ( 'drwc_download_expired' == $mail->id ) {
 				// Trigger our email.
 				$mail->trigger( $order_id );
+				// Set metadata.
+				update_post_meta( $order_id, 'drwc_download_expired_email_sent', true );
 			}
 		}
 	}

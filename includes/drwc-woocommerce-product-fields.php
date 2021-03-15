@@ -22,7 +22,7 @@ if ( ! defined( 'WPINC' ) ) {
  */
 function drwc_downloadable_product_option_group() {
 	echo '<div class="options_group show_if_downloadable hidden">';
- 
+
     $args = array(
         'label'             => __( 'Renewal Price ', 'drwc' ) . '(' . get_woocommerce_currency_symbol() . ')',
         'placeholder'       => '',
@@ -42,9 +42,9 @@ function drwc_downloadable_product_option_group() {
         ),
 
     );
-    
+
     woocommerce_wp_text_input( $args );
- 
+
 	echo '</div>';
 }
 add_action( 'woocommerce_product_options_pricing', 'drwc_downloadable_product_option_group', 1 );
