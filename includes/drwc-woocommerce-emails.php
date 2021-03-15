@@ -27,6 +27,21 @@ function drwc_woocommerce_ajax_email_action( $actions ) {
 add_action( 'woocommerce_email_actions', 'drwc_woocommerce_ajax_email_action' );
 
 /**
+ * Filter template path to use our email-downloads.php template
+ * 
+ * @since  1.0
+ * @return string
+ */
+function drwc_locate_template_email_downloads( $template, $template_name, $template_path ) {
+	$basename = basename( $template );
+	if ( 'email-downloads.php' == $basename ) {
+		$template = trailingslashit( plugin_dir_path( __FILE__ ) ) . 'emails/email-downloads.php';
+	}
+	return $template;
+}
+add_filter( 'woocommerce_locate_template', 'drwc_locate_template_email_downloads', 10, 3 );
+
+/**
  * Class Download_Renewals_for_WooCommerce_WC_Emails
  *
  * @since 1.0

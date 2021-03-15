@@ -142,7 +142,7 @@ function drwc_send_woocommerce_email( $order_id ) {
 			if ( 'drwc_download_expired' == $mail->id ) {
 				// Trigger our email.
 				$mail->trigger( $order_id );
-				// Set metadata.
+				// Set metadata for email already being sent.
 				update_post_meta( $order_id, 'drwc_download_expired_email_sent', true );
 			}
 		}
