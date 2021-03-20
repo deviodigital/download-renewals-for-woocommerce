@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Download Renewals for WooCommerce\n"
-"POT-Creation-Date: 2021-02-08 21:35-0500\n"
-"PO-Revision-Date: 2021-02-08 21:35-0500\n"
+"POT-Creation-Date: 2021-03-20 01:14-0400\n"
+"PO-Revision-Date: 2021-03-20 01:13-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,8 +21,141 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
+#: admin/class-download-renewals-for-woocommerce-settings.php:605
+msgid "Choose File"
+msgstr ""
+
+#: admin/class-download-renewals-for-woocommerce-settings.php:626
+msgid "Choose Image"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+#: admin/class-download-renewals-for-woocommerce-settings.php:719
+msgid "Download Renewals for WooCommerce"
+msgstr ""
+
+#: admin/class-download-renewals-for-woocommerce-settings.php:720
+msgid "Download Renewals"
+msgstr ""
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:60
+msgid "Basic Settings"
+msgstr ""
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:68
+msgid "Other Settings"
+msgstr ""
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:78
+msgid "Text Input"
+msgstr ""
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:79
+msgid "Text input description"
+msgstr ""
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:90
+msgid "Number Input"
+msgstr ""
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:91
+msgid "Number field with validation callback `intval`"
+msgstr ""
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:103
+msgid "Password Input"
+msgstr ""
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:104
+msgid "Password field description"
+msgstr ""
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:114
+msgid "Textarea Input"
+msgstr ""
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:115
+msgid "Textarea description"
+msgstr ""
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:144
+msgid "Checkbox"
+msgstr ""
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:145
+msgid "Checkbox Label"
+msgstr ""
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:155
+msgid "Radio"
+msgstr ""
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:156
+msgid "Radio Button"
+msgstr ""
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:170
+msgid "Multile checkbox"
+msgstr ""
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:171
+msgid "Multile checkbox description"
+msgstr ""
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:185
+msgid "A Dropdown"
+msgstr ""
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:186
+msgid "A Dropdown description"
+msgstr ""
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:200
+msgid "Image"
+msgstr ""
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:201
+msgid "Image description"
+msgstr ""
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:214
+msgid "File"
+msgstr ""
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:215
+msgid "File description"
+msgstr ""
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:228
+msgid "Color"
+msgstr ""
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:229
+msgid "Color description"
+msgstr ""
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:230
+msgid "#5F4B8B"
+msgstr ""
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:240
+msgid "WP_Editor"
+msgstr ""
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:241
+msgid "WP_Editor description"
+msgstr ""
+
+#: download-renewals-for-woocommerce.php:88
+msgid "Settings"
+msgstr ""
+
 #: includes/drwc-background-functions.php:29
 msgid "Once per day"
+msgstr ""
+
+#: includes/drwc-woocommerce-product-fields.php:27
+msgid "Renewal Price "
 msgstr ""
 
 #: includes/emails/class-wc-order-download-expired.php:38
@@ -47,14 +180,22 @@ msgctxt ""
 msgid "[%s] A download you purchased has expired"
 msgstr ""
 
+#: includes/emails/email-downloads.php:22
+msgid "Downloads"
+msgstr ""
+
+#: includes/emails/email-downloads.php:49
+msgid "Expired"
+msgstr ""
+
+#: includes/emails/email-downloads.php:62
+msgid "Never"
+msgstr ""
+
 #: includes/emails/templates/plain/wc-order-download-expired.php:12
 #: includes/emails/templates/wc-order-download-expired.php:16
 #, php-format
 msgid "Order #%d has products with expired downloads. Order Details:"
-msgstr ""
-
-#. Plugin Name of the plugin/theme
-msgid "Download Renewals for WooCommerce"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
