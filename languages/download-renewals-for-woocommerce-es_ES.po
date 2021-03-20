@@ -1,0 +1,223 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Download Renewals for WooCommerce\n"
+"POT-Creation-Date: 2021-03-20 01:18-0400\n"
+"PO-Revision-Date: 2021-03-20 01:18-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: download-renewals-for-woocommerce.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: admin/class-download-renewals-for-woocommerce-settings.php:605
+msgid "Choose File"
+msgstr "Elija el archivo"
+
+#: admin/class-download-renewals-for-woocommerce-settings.php:626
+msgid "Choose Image"
+msgstr "Elegir imagen"
+
+#. Plugin Name of the plugin/theme
+#: admin/class-download-renewals-for-woocommerce-settings.php:719
+msgid "Download Renewals for WooCommerce"
+msgstr "Descargar renovaciones para WooCommerce"
+
+#: admin/class-download-renewals-for-woocommerce-settings.php:720
+msgid "Download Renewals"
+msgstr "Descargar renovaciones"
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:60
+msgid "Basic Settings"
+msgstr "Ajustes Básicos"
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:68
+msgid "Other Settings"
+msgstr "Otros ajustes"
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:78
+msgid "Text Input"
+msgstr "Entrada de texto"
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:79
+msgid "Text input description"
+msgstr "Descripción de entrada de texto"
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:90
+msgid "Number Input"
+msgstr "Sayı Girişi"
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:91
+msgid "Number field with validation callback `intval`"
+msgstr "Campo numérico con devolución de llamada de validación `intval`"
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:103
+msgid "Password Input"
+msgstr "Entrada de contraseña"
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:104
+msgid "Password field description"
+msgstr "Descripción del campo de contraseña"
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:114
+msgid "Textarea Input"
+msgstr "Entrada de TextArea"
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:115
+msgid "Textarea description"
+msgstr "Área de Texto descripción"
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:144
+msgid "Checkbox"
+msgstr "Checkbox"
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:145
+msgid "Checkbox Label"
+msgstr "Etiqueta de la casilla de verificación"
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:155
+msgid "Radio"
+msgstr "Radio"
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:156
+msgid "Radio Button"
+msgstr "Boton de radio"
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:170
+msgid "Multile checkbox"
+msgstr "Casilla de verificación Multile"
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:171
+msgid "Multile checkbox description"
+msgstr "Casilla de verificación Descripción de Multile"
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:185
+msgid "A Dropdown"
+msgstr "Agregar un menu desplegable"
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:186
+msgid "A Dropdown description"
+msgstr "Una descripción desplegable"
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:200
+msgid "Image"
+msgstr "Imagen"
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:201
+msgid "Image description"
+msgstr "Descripción de la imagen"
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:214
+msgid "File"
+msgstr "Archivo"
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:215
+msgid "File description"
+msgstr "Descripción de archivo"
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:228
+msgid "Color"
+msgstr "Color"
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:229
+msgid "Color description"
+msgstr "Descripción del color"
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:230
+msgid "#5F4B8B"
+msgstr "#5F4B8B"
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:240
+msgid "WP_Editor"
+msgstr "WP_Editor"
+
+#: admin/download-renewals-for-woocommerce-settings-page.php:241
+msgid "WP_Editor description"
+msgstr "WP_Editor Descripción"
+
+#: download-renewals-for-woocommerce.php:88
+msgid "Settings"
+msgstr "Ajustes"
+
+#: includes/drwc-background-functions.php:29
+msgid "Once per day"
+msgstr "Una vez al día"
+
+#: includes/drwc-woocommerce-product-fields.php:27
+msgid "Renewal Price "
+msgstr "Precio de renovación "
+
+#: includes/emails/class-wc-order-download-expired.php:38
+msgid "DRWC Download Expired"
+msgstr "DRWC Descargar expirado"
+
+#: includes/emails/class-wc-order-download-expired.php:39
+msgid ""
+"An email sent to the customer when a downloadable item they've purchased is "
+"expired"
+msgstr ""
+"Un correo electrónico enviado al cliente cuando un artículo descargable que "
+"ha comprado caduca"
+
+#: includes/emails/class-wc-order-download-expired.php:43
+msgid "Download Expired"
+msgstr "Descargar expirado"
+
+#. translators: placeholder is {blogname}, a variable that will be substituted when email is sent out
+#: includes/emails/class-wc-order-download-expired.php:46
+#, php-format
+msgctxt ""
+"default email subject for customers when a purchased download is expired"
+msgid "[%s] A download you purchased has expired"
+msgstr "[%s] Una descarga que compraste ha caducado"
+
+#: includes/emails/email-downloads.php:22
+msgid "Downloads"
+msgstr "Descargas"
+
+#: includes/emails/email-downloads.php:49
+msgid "Expired"
+msgstr "Expirado"
+
+#: includes/emails/email-downloads.php:62
+msgid "Never"
+msgstr "Nunca"
+
+#: includes/emails/templates/plain/wc-order-download-expired.php:12
+#: includes/emails/templates/wc-order-download-expired.php:16
+#, php-format
+msgid "Order #%d has products with expired downloads. Order Details:"
+msgstr ""
+"El pedido #%d tiene productos con descargas caducadas. Detalles del pedido:"
+
+#. Plugin URI of the plugin/theme
+msgid ""
+"https://www.deviodigital.com/download-renewals-for-woocommerce-release-notes"
+msgstr ""
+"https://www.deviodigital.com/download-renewals-for-woocommerce-release-notes"
+
+#. Description of the plugin/theme
+msgid ""
+"Sell digital products and remind your customers when their downloads expire"
+msgstr ""
+"Venda productos digitales y recuerde a sus clientes cuando caduquen sus "
+"descargas"
+
+#. Author of the plugin/theme
+msgid "Devio Digital"
+msgstr "Devio Digital"
+
+#. Author URI of the plugin/theme
+msgid "https://www.deviodigital.com"
+msgstr "https://www.deviodigital.com"
