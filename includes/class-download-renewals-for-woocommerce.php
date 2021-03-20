@@ -137,7 +137,7 @@ class Download_Renewals_For_Woocommerce {
 		/**
 		 * The class responsible for defining the admin Settings page.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-download-renewals-for-woocommerce-settings.php';
+		//require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-download-renewals-for-woocommerce-settings.php';
 
 		/**
 		 * The file responsible for defining the custom WooCommerce product settings.
