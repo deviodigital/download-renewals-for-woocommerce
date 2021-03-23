@@ -26,7 +26,7 @@ This plugin comes pre-translated into the following languages:
 *   English
 *   Spanish
 
-If you'd like to translate this plugin into your own language, we always enjoy pull requests in the (https://github.com/deviodigital/download-renewals-for-woocommerce)[github repo].
+If you'd like to translate this plugin into your own language, we accept and enjoy pull requests at the [github repo](https://github.com/deviodigital/download-renewals-for-woocommerce).
 
 == Installation ==
 
