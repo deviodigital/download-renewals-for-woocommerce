@@ -59,7 +59,7 @@ function drwc_downloadable_product_save_fields( $post_id ) {
     // Get product.
     $product = wc_get_product( $post_id );
     // Get renewal price (if it's set).
-    $drwc_renewal_price = isset($_POST['drwc_renewal_price']) ? $_POST['drwc_renewal_price'] : '';
+    $drwc_renewal_price = isset( $_POST['drwc_renewal_price'] ) ? $_POST['drwc_renewal_price'] : '';
     // Update product meta.
     $product->update_meta_data( 'drwc_renewal_price', sanitize_text_field( $drwc_renewal_price ) );
     // Save product.

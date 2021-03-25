@@ -29,6 +29,7 @@ function drwc_renewal_price_display( $price, $product ) {
     // Product data.
     $product = wc_get_product( $post_id );
 
+    // Get current user data.
     $current_user = wp_get_current_user();
 
     // Renewal price.
@@ -49,7 +50,6 @@ add_filter( 'woocommerce_get_price', 'drwc_renewal_price_display', 10, 2 );
  * @return void
  */
 function drwc_update_renewal_price_in_cart( $cart ) {
-
     // This is necessary for WC 3.0+
     if ( is_admin() && ! defined( 'DOING_AJAX' ) ) {
         return;
@@ -69,7 +69,6 @@ function drwc_update_renewal_price_in_cart( $cart ) {
             $item['data']->set_price( get_post_meta( $item['product_id'], 'drwc_renewal_price', true ) );
         }
     }
-
 }
 add_action( 'woocommerce_before_calculate_totals', 'drwc_update_renewal_price_in_cart', 9999 );
 
@@ -80,14 +79,16 @@ add_action( 'woocommerce_before_calculate_totals', 'drwc_update_renewal_price_in
  * @return string $output
  */
 function drwc_update_renewal_price_in_mini_cart( $output, $cart_item, $cart_item_key ) {
-  $product_id = $cart_item['product_id'];
-  // Renewal price.
-  $renewal_price = get_post_meta( $product_id, 'drwc_renewal_price', true );
+    // Product ID.
+    $product_id = $cart_item['product_id'];
 
-  if ( $renewal_price ) {
-    return sprintf( '<span class="quantity">%s &times; <span class="woocommerce-Price-amount amount">%s</span></span>', $cart_item['quantity'], wc_price( $renewal_price ) );
-  } else {
-    return $output;
-  }
+    // Get renewal price.
+    $renewal_price = get_post_meta( $product_id, 'drwc_renewal_price', true );
+
+    if ( $renewal_price ) {
+        return sprintf( '<span class="quantity">%s &times; <span class="woocommerce-Price-amount amount">%s</span></span>', $cart_item['quantity'], wc_price( $renewal_price ) );
+    } else {
+        return $output;
+    }
 }
-add_filter('woocommerce_widget_cart_item_quantity', 'drwc_update_renewal_price_in_mini_cart', 10, 3 );
+add_filter( 'woocommerce_widget_cart_item_quantity', 'drwc_update_renewal_price_in_mini_cart', 10, 3 );

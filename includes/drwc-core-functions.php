@@ -47,7 +47,6 @@ function drwc_check_orders_for_expired_downloads() {
  * @return bool|void
  */
 function drwc_check_order_for_downloads( $order_id ) {
-
 	// Get order data.
 	$order = wc_get_order( $order_id );
 
@@ -107,8 +106,10 @@ function drwc_check_downloadable_items( $order_id, $downloadable_items ) {
 function drwc_is_download_expired( $item ) {
 	// Access expires.
 	$access_expires = $item['access_expires'];
+
 	// Convert access expires to array.
 	$access_expires = json_decode( json_encode( $access_expires ), true );
+
 	// Expire date.
 	$expire_date = $access_expires['date'];
 
@@ -132,8 +133,10 @@ function drwc_is_download_expired( $item ) {
 function drwc_send_woocommerce_email( $order_id ) {
 	// WooCommerce mailer.
 	$mailer = WC()->mailer();
+
 	// Get WooCommerce emails.
-	$mails  = $mailer->get_emails();
+	$mails = $mailer->get_emails();
+
 	// Check if emails exist.
 	if ( ! empty( $mails ) ) {
 		// Loop through emails.
@@ -142,6 +145,7 @@ function drwc_send_woocommerce_email( $order_id ) {
 			if ( 'drwc_download_expired' == $mail->id ) {
 				// Trigger our email.
 				$mail->trigger( $order_id );
+
 				// Set metadata for email already being sent.
 				update_post_meta( $order_id, 'drwc_download_expired_email_sent', true );
 			}
@@ -163,13 +167,12 @@ function drwc_user_has_bought_items( $user_var = 0,  $product_ids = 0 ) {
         $meta_key   = '_customer_user';
         $meta_value = $user_var == 0 ? (int) get_current_user_id() : (int) $user_var;
     }
-
     // Based on billing email (Guest users).
     else { 
         $meta_key   = '_billing_email';
         $meta_value = sanitize_email( $user_var );
     }
-    
+
     $paid_statuses    = array_map( 'esc_sql', wc_get_is_paid_statuses() );
     $product_ids      = is_array( $product_ids ) ? implode(',', $product_ids) : $product_ids;
     $line_meta_value  = $product_ids !=  ( 0 || '' ) ? 'AND woim.meta_value IN ('.$product_ids.')' : 'AND woim.meta_value != 0';

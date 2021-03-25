@@ -48,7 +48,7 @@ add_filter( 'woocommerce_locate_template', 'drwc_locate_template_email_downloads
  */
 class Download_Renewals_for_WooCommerce_WC_Emails {
 	/**
-	 * Download_Renewals_for_WooCommerce_WC_Emails constructor.
+	 * Class constructor.
 	 */
 	public function __construct() {
 		// Filtering the emails and adding our own email.
