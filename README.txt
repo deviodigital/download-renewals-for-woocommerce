@@ -11,7 +11,7 @@ Send reminders to customers when downloads they purchased have expired
 
 == Description ==
 
-Download Renewals for WooCommerce is a recurring payments plugin for your online store that sends email reminders to your customers when their downloadas have expired.
+Download Renewals for WooCommerce is a recurring payments plugin for your online store that sends email reminders to your customers when their downloads have expired.
 
 Increase your recurring revenue from customers who purchase your downloads and renew their purchase after the predefined time you set as the download expiration date.
 
@@ -27,6 +27,12 @@ This plugin comes pre-translated into the following languages:
 *   Spanish
 
 If you'd like to translate this plugin into your own language, we accept and enjoy pull requests at the [github repo](https://github.com/deviodigital/download-renewals-for-woocommerce).
+
+### Customer Loyalty for WooCommerce
+
+Our customer loyalty plugin helps increase your customer loyalty by rewarding them for their repeat purchase behavior.
+
+Learn more at [Customer Loyalty for WooCommerce](https://www.wordpress.org/plugins/customer-loyalty-for-woocommerce)
 
 == Installation ==
 
