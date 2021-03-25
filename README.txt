@@ -21,12 +21,12 @@ DRWC lets you easily add a renewal price to your downloadable products which is 
 
 ## Translations
 
-This plugin comes pre-translated into the following languages:
+This plugin comes translated into the following languages:
 
 *   English
 *   Spanish
 
-If you'd like to translate this plugin into your own language, we accept and enjoy pull requests at the [github repo](https://github.com/deviodigital/download-renewals-for-woocommerce).
+If you'd like to translate this plugin into your own language, we accept - and enjoy - pull requests at the [github repo](https://github.com/deviodigital/download-renewals-for-woocommerce).
 
 ### Customer Loyalty for WooCommerce
 
