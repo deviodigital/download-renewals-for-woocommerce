@@ -9,8 +9,8 @@
  * @link       https://www.deviodigital.com
  * @since      1.0.0
  *
- * @package    Download_Renewals_For_Woocommerce
- * @subpackage Download_Renewals_For_Woocommerce/includes
+ * @package    Download_Renewals_For_WooCommerce
+ * @subpackage Download_Renewals_For_WooCommerce/includes
  */
 
 /**
@@ -20,11 +20,11 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    Download_Renewals_For_Woocommerce
- * @subpackage Download_Renewals_For_Woocommerce/includes
+ * @package    Download_Renewals_For_WooCommerce
+ * @subpackage Download_Renewals_For_WooCommerce/includes
  * @author     Devio Digital <contact@deviodigital.com>
  */
-class Download_Renewals_For_Woocommerce_i18n {
+class Download_Renewals_For_WooCommerce_i18n {
 
 
 	/**

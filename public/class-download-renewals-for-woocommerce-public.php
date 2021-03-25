@@ -6,8 +6,8 @@
  * @link       https://www.deviodigital.com
  * @since      1.0.0
  *
- * @package    Download_Renewals_For_Woocommerce
- * @subpackage Download_Renewals_For_Woocommerce/public
+ * @package    Download_Renewals_For_WooCommerce
+ * @subpackage Download_Renewals_For_WooCommerce/public
  */
 
 /**
@@ -16,11 +16,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the public-facing stylesheet and JavaScript.
  *
- * @package    Download_Renewals_For_Woocommerce
- * @subpackage Download_Renewals_For_Woocommerce/public
+ * @package    Download_Renewals_For_WooCommerce
+ * @subpackage Download_Renewals_For_WooCommerce/public
  * @author     Devio Digital <contact@deviodigital.com>
  */
-class Download_Renewals_For_Woocommerce_Public {
+class Download_Renewals_For_WooCommerce_Public {
 
 	/**
 	 * The ID of this plugin.

@@ -5,7 +5,7 @@
  * 
  * @link              https://www.deviodigital.com
  * @since             1.0.0
- * @package           Download_Renewals_For_Woocommerce
+ * @package           Download_Renewals_For_WooCommerce
  *
  * @wordpress-plugin
  * Plugin Name:          Download Renewals for WooCommerce
@@ -39,7 +39,7 @@ $plugin_name = plugin_basename( __FILE__ );
  */
 function activate_download_renewals_for_woocommerce() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-download-renewals-for-woocommerce-activator.php';
-	Download_Renewals_For_Woocommerce_Activator::activate();
+	Download_Renewals_For_WooCommerce_Activator::activate();
 }
 
 /**
@@ -48,7 +48,7 @@ function activate_download_renewals_for_woocommerce() {
  */
 function deactivate_download_renewals_for_woocommerce() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-download-renewals-for-woocommerce-deactivator.php';
-	Download_Renewals_For_Woocommerce_Deactivator::deactivate();
+	Download_Renewals_For_WooCommerce_Deactivator::deactivate();
 }
 
 register_activation_hook( __FILE__, 'activate_download_renewals_for_woocommerce' );
@@ -71,7 +71,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-download-renewals-for-wooc
  */
 function run_download_renewals_for_woocommerce() {
 
-	$plugin = new Download_Renewals_For_Woocommerce();
+	$plugin = new Download_Renewals_For_WooCommerce();
 	$plugin->run();
 
 }

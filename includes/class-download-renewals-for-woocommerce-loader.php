@@ -6,8 +6,8 @@
  * @link       https://www.deviodigital.com
  * @since      1.0.0
  *
- * @package    Download_Renewals_For_Woocommerce
- * @subpackage Download_Renewals_For_Woocommerce/includes
+ * @package    Download_Renewals_For_WooCommerce
+ * @subpackage Download_Renewals_For_WooCommerce/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Download_Renewals_For_Woocommerce
- * @subpackage Download_Renewals_For_Woocommerce/includes
+ * @package    Download_Renewals_For_WooCommerce
+ * @subpackage Download_Renewals_For_WooCommerce/includes
  * @author     Devio Digital <contact@deviodigital.com>
  */
-class Download_Renewals_For_Woocommerce_Loader {
+class Download_Renewals_For_WooCommerce_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

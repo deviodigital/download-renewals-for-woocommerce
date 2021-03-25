@@ -6,8 +6,8 @@
  * @link       https://www.deviodigital.com
  * @since      1.0.0
  *
- * @package    Download_Renewals_For_Woocommerce
- * @subpackage Download_Renewals_For_Woocommerce/includes
+ * @package    Download_Renewals_For_WooCommerce
+ * @subpackage Download_Renewals_For_WooCommerce/includes
  */
 
 // If this file is called directly, abort.
