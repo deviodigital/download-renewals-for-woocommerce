@@ -18,7 +18,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Alter product price for renewals
  * 
  * @since  1.0
- * @return string $price_html
+ * @return string $price
  */ 
 function drwc_renewal_price_display( $price, $product ) {
     global $post;

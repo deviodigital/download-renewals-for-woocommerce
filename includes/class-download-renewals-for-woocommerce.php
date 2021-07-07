@@ -68,7 +68,7 @@ class Download_Renewals_For_WooCommerce {
 	 */
 	public function __construct() {
 		$this->plugin_name = 'download-renewals-for-woocommerce';
-		$this->version = '1.0.0';
+		$this->version     = '1.0.0';
 
 		if ( defined( 'DRWC_VERSION' ) ) {
 			$this->version = DRWC_VERSION;
