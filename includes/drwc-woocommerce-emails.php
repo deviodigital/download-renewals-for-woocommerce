@@ -21,8 +21,8 @@ if ( ! defined( 'WPINC' ) ) {
  * @return array
  */
 function drwc_woocommerce_ajax_email_action( $actions ) {
-    $actions[] = 'drwc_download_expired_trigger_email';
-    return $actions;
+	$actions[] = 'drwc_download_expired_trigger_email';
+	return $actions;
 }
 add_action( 'woocommerce_email_actions', 'drwc_woocommerce_ajax_email_action' );
 
