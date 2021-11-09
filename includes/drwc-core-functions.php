@@ -248,3 +248,42 @@ function drwc_add_renewal_metadata_to_order( $order_id ) {
     }
 }
 add_action( 'woocommerce_thankyou', 'drwc_add_renewal_metadata_to_order', 10, 1 );
+
+/**
+ * Orders with Download Renewals
+ * 
+ * Returns an array of each order that has a download renewal in it, along with 
+ * the product ID(s) and discount price(s).
+ * 
+ * @since  1.1
+ * @return array $renewal_orders
+ */
+function drwc_orders_with_download_renewals() {
+	// Order query.
+	$query = new WC_Order_Query( array(
+		'limit'   => -1,
+		'return'  => 'ids',
+	) );
+	// Get orders.
+	$orders = $query->get_orders();
+	// Create array.
+	$renwal_orders = array();
+	// Loop through orders.
+	foreach ( $orders as $order ) {
+		// Get renewal data (if any).
+		$is_renewal = get_post_meta( $order, 'drwc_order_has_download_renewal', true );
+		// Only run if renewals are present.
+		if ( $is_renewal ) {
+			// Create array.
+			$renewal_order = array();
+			// Loop through renewal(s).
+			foreach ( $is_renewal as $renewal ) {
+				// Add discount price to array.
+				$renewal_order[$renewal['product_id']] = $renewal['discount_price'];
+			}
+			// Add order renewal details to array.
+			$renewal_orders[$order] = $renewal_order;
+		}
+	}
+	return apply_filters( 'drwc_orders_with_download_renewals', $renewal_orders );
+}
