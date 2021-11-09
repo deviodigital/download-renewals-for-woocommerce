@@ -192,3 +192,59 @@ function drwc_user_has_bought_items( $user_var = 0,  $product_ids = 0 ) {
 	// Return true if count is higher than 0 (or false).
 	return $count > 0 ? true : false;
 }
+
+/**
+ * Add renewal metadata to order
+ * 
+ * @since  1.1
+ * @return void
+ */
+function drwc_add_renewal_metadata_to_order( $order_id ) {
+	// Bail early?
+    if ( ! $order_id ) {
+		return;
+	}
+
+    // Allow code execution only once.
+    if ( ! get_post_meta( $order_id, 'drwc_order_has_download_renewal', true ) ) {
+
+        // Get an instance of the WC_Order object.
+        $order = wc_get_order( $order_id );
+
+		// Get customer's user ID.
+		$user_id = $order->get_user_id();
+
+		// Create product data.
+		$product_data = array();
+
+		// Loop through order items.
+        foreach ( $order->get_items() as $item_id => $item ) {
+            // Get the product object.
+			$product = $item->get_product();
+
+            // Get the product ID.
+            $product_id = $product->get_id();
+
+			// Renewal price.
+			if ( get_post_meta( $product_id, 'drwc_renewal_price', true ) ) {
+				// Check if user has bought the item before.
+				if ( drwc_user_has_bought_items( $user_id, $post_id ) ) {
+					$product_data[] = array(
+						'product_id'     => $product_id,
+						'product_price'  => $product->price,
+						'discount_price' => get_post_meta( $product_id, 'drwc_renewal_price', true )
+					);
+				}
+			}
+		}
+		
+		// Check if array is not empty.
+		if ( ! empty( $product_data ) ) {
+			// Add download renewal info to order metadata.
+			$order->update_meta_data( 'drwc_order_has_download_renewal', $product_data );
+			// Save order data.
+			$order->save();
+		}
+    }
+}
+add_action( 'woocommerce_thankyou', 'drwc_add_renewal_metadata_to_order', 10, 1 );
