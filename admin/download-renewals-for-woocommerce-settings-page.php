@@ -131,7 +131,7 @@ if ( class_exists( 'WP_OSA' ) ) {
 		array(
 			'id'   => 'title',
 			'type' => 'title',
-			'name' => '<h1>Title</h1>',
+			'name' => '<h1>' . __( 'Title', 'download-renewals-for-woocommerce' ) . '</h1>',
 		)
 	);
 
