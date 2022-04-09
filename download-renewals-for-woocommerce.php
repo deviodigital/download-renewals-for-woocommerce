@@ -11,7 +11,7 @@
  * Plugin Name:          Download Renewals for WooCommerce
  * Plugin URI:           https://www.deviodigital.com/download-renewals-for-woocommerce-release-notes
  * Description:          Sell digital products and remind your customers when their downloads expire
- * Version:              1.0.0
+ * Version:              1.0.1
  * Author:               Devio Digital
  * Author URI:           https://www.deviodigital.com
  * License:              GPL-2.0+
@@ -19,7 +19,7 @@
  * Text Domain:          download-renewals-for-woocommerce
  * Domain Path:          /languages
  * WC requires at least: 3.5.0
- * WC tested up to:      5.1
+ * WC tested up to:      6.3.1
  */
 
 // If this file is called directly, abort.
@@ -28,7 +28,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Current plugin version.
-define( 'DRWC_VERSION', '1.0.0' );
+define( 'DRWC_VERSION', '1.0.1' );
 
 // Define DRWC plugin name.
 $plugin_name = plugin_basename( __FILE__ );
