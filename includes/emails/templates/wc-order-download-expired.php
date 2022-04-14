@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 
-	<p><?php printf( __( 'Order #%d has products with expired downloads. Order Details:', 'download-renewals-for-woocommerce' ), $order->get_order_number() ); ?></p>
+	<p><?php printf( __( 'Order #%d has products with expired downloads.', 'download-renewals-for-woocommerce' ), $order->get_order_number() ); ?></p>
 
 <?php
 /**

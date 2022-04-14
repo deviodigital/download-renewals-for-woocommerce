@@ -21,8 +21,8 @@ if ( ! defined( 'WPINC' ) ) {
  * @return array
  */
 function drwc_woocommerce_ajax_email_action( $actions ) {
-    $actions[] = 'drwc_download_expired_trigger_email';
-    return $actions;
+	$actions[] = 'drwc_download_expired_trigger_email';
+	return $actions;
 }
 add_action( 'woocommerce_email_actions', 'drwc_woocommerce_ajax_email_action' );
 
@@ -48,7 +48,7 @@ add_filter( 'woocommerce_locate_template', 'drwc_locate_template_email_downloads
  */
 class Download_Renewals_for_WooCommerce_WC_Emails {
 	/**
-	 * Download_Renewals_for_WooCommerce_WC_Emails constructor.
+	 * Class constructor.
 	 */
 	public function __construct() {
 		// Filtering the emails and adding our own email.

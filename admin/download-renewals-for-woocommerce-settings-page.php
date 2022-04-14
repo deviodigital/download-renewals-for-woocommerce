@@ -6,8 +6,8 @@
  * @link       https://www.deviodigital.com
  * @since      1.0.0
  *
- * @package    Download_Renewals_For_Woocommerce
- * @subpackage Download_Renewals_For_Woocommerce/admin
+ * @package    DownloadRenewalsForWooCommerce
+ * @subpackage DownloadRenewalsForWooCommerce/admin
  */
 
 // If this file is called directly, abort.
@@ -131,7 +131,7 @@ if ( class_exists( 'WP_OSA' ) ) {
 		array(
 			'id'   => 'title',
 			'type' => 'title',
-			'name' => '<h1>Title</h1>',
+			'name' => '<h1>' . __( 'Title', 'download-renewals-for-woocommerce' ) . '</h1>',
 		)
 	);
 

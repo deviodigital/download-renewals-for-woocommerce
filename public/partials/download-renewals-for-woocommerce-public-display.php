@@ -8,8 +8,8 @@
  * @link       https://www.deviodigital.com
  * @since      1.0.0
  *
- * @package    Download_Renewals_For_Woocommerce
- * @subpackage Download_Renewals_For_Woocommerce/public/partials
+ * @package    DownloadRenewalsForWooCommerce
+ * @subpackage DownloadRenewalsForWooCommerce/public/partials
  */
 ?>
 

@@ -22,7 +22,7 @@
  * @link       https://www.deviodigital.com
  * @since      1.0.0
  *
- * @package    Download_Renewals_For_Woocommerce
+ * @package    DownloadRenewalsForWooCommerce
  */
 
 // If uninstall not called from WordPress, then exit.

@@ -6,8 +6,8 @@
  * @link       https://www.deviodigital.com
  * @since      1.0.0
  *
- * @package    Download_Renewals_For_Woocommerce
- * @subpackage Download_Renewals_For_Woocommerce/admin
+ * @package    DownloadRenewalsForWooCommerce
+ * @subpackage DownloadRenewalsForWooCommerce/admin
  */
 
 /**
@@ -16,11 +16,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
- * @package    Download_Renewals_For_Woocommerce
- * @subpackage Download_Renewals_For_Woocommerce/admin
+ * @package    DownloadRenewalsForWooCommerce
+ * @subpackage DownloadRenewalsForWooCommerce/admin
  * @author     Devio Digital <contact@deviodigital.com>
  */
-class Download_Renewals_For_Woocommerce_Admin {
+class DownloadRenewalsForWooCommerceAdmin {
 
 	/**
 	 * The ID of this plugin.
