@@ -51,10 +51,10 @@ function drwc_check_order_for_downloads( $order_id ) {
 	$order = wc_get_order( $order_id );
 
 	// Get the customer ID.
-	$customer_id = $order->get_user_id();
+	//$customer_id = $order->get_user_id();
 
 	// Get order items = each product in the order
-	$items = $order->get_items();
+	//$items = $order->get_items();
 
 	// Get downloadable items.
 	$downloadable_items = $order->get_downloadable_items();
@@ -205,38 +205,38 @@ function drwc_add_renewal_metadata_to_order( $order_id ) {
 		return;
 	}
 
-    // Allow code execution only once.
-    if ( ! get_post_meta( $order_id, 'drwc_order_has_download_renewal', true ) ) {
+	// Allow code execution only once.
+	if ( ! get_post_meta( $order_id, 'drwc_order_has_download_renewal', true ) ) {
 
-			// Get an instance of the WC_Order object.
-			$order = wc_get_order( $order_id );
+		// Get an instance of the WC_Order object.
+		$order = wc_get_order( $order_id );
 
-			// Get customer's user ID.
-			$user_id = $order->get_user_id();
+		// Get customer's user ID.
+		$user_id = $order->get_user_id();
 
-			// Create product data.
-			$product_data = array();
+		// Create product data.
+		$product_data = array();
 
-			// Loop through order items.
-			foreach ( $order->get_items() as $item_id => $item ) {
-				// Get the product object.
-				$product = $item->get_product();
+		// Loop through order items.
+		foreach ( $order->get_items() as $item ) {
+			// Get the product object.
+			$product = $item->get_product();
 
-				// Get the product ID.
-				$product_id = $product->get_id();
+			// Get the product ID.
+			$product_id = $product->get_id();
 
-				// Renewal price.
-				if ( get_post_meta( $product_id, 'drwc_renewal_price', true ) ) {
-					// Check if user has bought the item before.
-					if ( drwc_user_has_bought_items( $user_id, $post_id ) ) {
-						$product_data[] = array(
-							'product_id'     => $product_id,
-							'product_price'  => $product->price,
-							'discount_price' => get_post_meta( $product_id, 'drwc_renewal_price', true )
-						);
-					}
+			// Renewal price.
+			if ( get_post_meta( $product_id, 'drwc_renewal_price', true ) ) {
+				// Check if user has bought the item before. @todo look at changing $post_id to $product_id
+				if ( drwc_user_has_bought_items( $user_id, $post_id ) ) {
+					$product_data[] = array(
+						'product_id'     => $product_id,
+						'product_price'  => $product->price,
+						'discount_price' => get_post_meta( $product_id, 'drwc_renewal_price', true )
+					);
 				}
 			}
+		}
 		
 		// Check if array is not empty.
 		if ( ! empty( $product_data ) ) {
@@ -266,8 +266,6 @@ function drwc_orders_with_download_renewals() {
 	) );
 	// Get orders.
 	$orders = $query->get_orders();
-	// Create array.
-	$renwal_orders = array();
 	// Loop through orders.
 	foreach ( $orders as $order ) {
 		// Get renewal data (if any).
