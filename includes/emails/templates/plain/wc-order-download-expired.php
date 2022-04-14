@@ -5,7 +5,7 @@
  * @since 1.0
  */
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+	wp_die();
 }
 
 echo "= " . $email_heading . " =\n\n";

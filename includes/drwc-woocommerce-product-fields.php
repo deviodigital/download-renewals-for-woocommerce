@@ -11,7 +11,7 @@
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
-	die;
+	wp_die();
 }
 
 /**
@@ -24,7 +24,7 @@ function drwc_downloadable_product_option_group() {
 	echo '<div class="options_group show_if_downloadable hidden">';
 
 	$args = array(
-		'label'             => esc_attr__( 'Renewal Price ', 'drwc' ) . '(' . get_woocommerce_currency_symbol() . ')',
+		'label'             => esc_attr__( 'Renewal Price ', 'download-renewals-for-woocommerce' ) . '(' . get_woocommerce_currency_symbol() . ')',
 		'placeholder'       => '',
 		'class'             => 'short wc_input_price',
 		'style'             => '',

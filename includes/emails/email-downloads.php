@@ -15,7 +15,7 @@
  * @version 3.4.0
  */
 
-defined( 'ABSPATH' ) || exit;
+defined( 'ABSPATH' ) || wp_die();
 
 $text_align = is_rtl() ? 'right' : 'left';
 

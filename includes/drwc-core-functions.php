@@ -114,8 +114,8 @@ function drwc_is_download_expired( $item ) {
 	$expire_date = $access_expires['date'];
 
 	// Format the access expires date.
-	$dt   = new DateTime( $expire_date );
-	$date = $dt->format( 'm/d/Y' );
+	$date_time = new DateTime( $expire_date );
+	$date      = $date_time->format( 'm/d/Y' );
 
 	// Check if download is expired.
 	if ( strtotime( $date ) < strtotime( 'now' ) ) {
@@ -166,12 +166,12 @@ function drwc_user_has_bought_items( $user_var = 0,  $product_ids = 0 ) {
 	if ( is_numeric( $user_var ) ) {
 		$meta_key   = '_customer_user';
 		$meta_value = $user_var == 0 ? (int) get_current_user_id() : (int) $user_var;
-    }
+  }
 	// Based on billing email (Guest users).
 	else { 
 		$meta_key   = '_billing_email';
 		$meta_value = sanitize_email( $user_var );
-    }
+  }
 
 	$paid_statuses    = array_map( 'esc_sql', wc_get_is_paid_statuses() );
 	$product_ids      = is_array( $product_ids ) ? implode(',', $product_ids) : $product_ids;
@@ -201,42 +201,42 @@ function drwc_user_has_bought_items( $user_var = 0,  $product_ids = 0 ) {
  */
 function drwc_add_renewal_metadata_to_order( $order_id ) {
 	// Bail early?
-    if ( ! $order_id ) {
+	if ( ! $order_id ) {
 		return;
 	}
 
     // Allow code execution only once.
     if ( ! get_post_meta( $order_id, 'drwc_order_has_download_renewal', true ) ) {
 
-        // Get an instance of the WC_Order object.
-        $order = wc_get_order( $order_id );
+			// Get an instance of the WC_Order object.
+			$order = wc_get_order( $order_id );
 
-		// Get customer's user ID.
-		$user_id = $order->get_user_id();
+			// Get customer's user ID.
+			$user_id = $order->get_user_id();
 
-		// Create product data.
-		$product_data = array();
+			// Create product data.
+			$product_data = array();
 
-		// Loop through order items.
-        foreach ( $order->get_items() as $item_id => $item ) {
-            // Get the product object.
-			$product = $item->get_product();
+			// Loop through order items.
+			foreach ( $order->get_items() as $item_id => $item ) {
+				// Get the product object.
+				$product = $item->get_product();
 
-            // Get the product ID.
-            $product_id = $product->get_id();
+				// Get the product ID.
+				$product_id = $product->get_id();
 
-			// Renewal price.
-			if ( get_post_meta( $product_id, 'drwc_renewal_price', true ) ) {
-				// Check if user has bought the item before.
-				if ( drwc_user_has_bought_items( $user_id, $post_id ) ) {
-					$product_data[] = array(
-						'product_id'     => $product_id,
-						'product_price'  => $product->price,
-						'discount_price' => get_post_meta( $product_id, 'drwc_renewal_price', true )
-					);
+				// Renewal price.
+				if ( get_post_meta( $product_id, 'drwc_renewal_price', true ) ) {
+					// Check if user has bought the item before.
+					if ( drwc_user_has_bought_items( $user_id, $post_id ) ) {
+						$product_data[] = array(
+							'product_id'     => $product_id,
+							'product_price'  => $product->price,
+							'discount_price' => get_post_meta( $product_id, 'drwc_renewal_price', true )
+						);
+					}
 				}
 			}
-		}
 		
 		// Check if array is not empty.
 		if ( ! empty( $product_data ) ) {
@@ -245,7 +245,7 @@ function drwc_add_renewal_metadata_to_order( $order_id ) {
 			// Save order data.
 			$order->save();
 		}
-    }
+  }
 }
 add_action( 'woocommerce_thankyou', 'drwc_add_renewal_metadata_to_order', 10, 1 );
 
@@ -261,8 +261,8 @@ add_action( 'woocommerce_thankyou', 'drwc_add_renewal_metadata_to_order', 10, 1 
 function drwc_orders_with_download_renewals() {
 	// Order query.
 	$query = new WC_Order_Query( array(
-		'limit'   => -1,
-		'return'  => 'ids',
+		'limit'  => -1,
+		'return' => 'ids',
 	) );
 	// Get orders.
 	$orders = $query->get_orders();

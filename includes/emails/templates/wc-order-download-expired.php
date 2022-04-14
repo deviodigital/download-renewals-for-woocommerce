@@ -5,7 +5,7 @@
  * @since 1.0
  */
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+	wp_die();
 }
 
 /**
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 
-	<p><?php printf( esc_attr__( 'Order #%d has products with expired downloads.', 'download-renewals-for-woocommerce' ), $order->get_order_number() ); ?></p>
+	<p><?php printf( esc_attr__( 'Order #%d has products with expired downloads.', 'download-renewals-for-woocommerce' ), esc_html( $order->get_order_number() ) ); ?></p>
 
 <?php
 /**

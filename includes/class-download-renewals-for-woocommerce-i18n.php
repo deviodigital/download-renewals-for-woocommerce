@@ -25,8 +25,6 @@
  * @author     Devio Digital <contact@deviodigital.com>
  */
 class DownloadRenewalsForWooCommercei18n {
-
-
 	/**
 	 * Load the plugin text domain for translation.
 	 *
@@ -41,7 +39,4 @@ class DownloadRenewalsForWooCommercei18n {
 		);
 
 	}
-
-
-
 }

@@ -10,7 +10,7 @@
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+	wp_die();
 }
 
 /**
@@ -716,8 +716,8 @@ if ( ! class_exists( 'WP_OSA' ) ) :
 			// add_options_page( $page_title, $menu_title, $capability, $menu_slug, array( $this, $callable ) );
 			add_submenu_page(
 				'woocommerce',
-				__( 'Download Renewals for WooCommerce', 'download-renewals-for-woocommerce' ),
-				__( 'Download Renewals', 'download-renewals-for-woocommerce' ),
+				esc_attr__( 'Download Renewals for WooCommerce', 'download-renewals-for-woocommerce' ),
+				esc_attr__( 'Download Renewals', 'download-renewals-for-woocommerce' ),
 				'manage_options',
 				'drwc_settings',
 				array( $this, 'plugin_page' )
@@ -726,7 +726,7 @@ if ( ! class_exists( 'WP_OSA' ) ) :
 
 		public function plugin_page() {
 			echo '<div class="wrap">';
-			echo '<h1>' . esc_attr__( 'Download Renewals for WooCommerce', 'download-renewals-for-woocommerce' ) . ' <span style="font-size:50%;">v' . DRWC_VERSION . '</span></h1>';
+			echo '<h1>' . esc_attr__( 'Download Renewals for WooCommerce', 'download-renewals-for-woocommerce' ) . ' <span style="font-size:50%;">v' . esc_attr( DRWC_VERSION ) . '</span></h1>';
 			$this->show_navigation();
 			$this->show_forms();
 			echo '</div>';
