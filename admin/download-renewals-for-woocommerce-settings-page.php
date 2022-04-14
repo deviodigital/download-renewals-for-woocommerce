@@ -57,7 +57,7 @@ if ( class_exists( 'WP_OSA' ) ) {
 	$wposa_obj->add_section(
 		array(
 			'id'    => 'wposa_basic',
-			'title' => __( 'Basic Settings', 'download-renewals-for-woocommerce' ),
+			'title' => esc_attr__( 'Basic Settings', 'download-renewals-for-woocommerce' ),
 		)
 	);
 
@@ -65,7 +65,7 @@ if ( class_exists( 'WP_OSA' ) ) {
 	$wposa_obj->add_section(
 		array(
 			'id'    => 'wposa_other',
-			'title' => __( 'Other Settings', 'download-renewals-for-woocommerce' ),
+			'title' => esc_attr__( 'Other Settings', 'download-renewals-for-woocommerce' ),
 		)
 	);
 
@@ -75,8 +75,8 @@ if ( class_exists( 'WP_OSA' ) ) {
 		array(
 			'id'      => 'text',
 			'type'    => 'text',
-			'name'    => __( 'Text Input', 'download-renewals-for-woocommerce' ),
-			'desc'    => __( 'Text input description', 'download-renewals-for-woocommerce' ),
+			'name'    => esc_attr__( 'Text Input', 'download-renewals-for-woocommerce' ),
+			'desc'    => esc_attr__( 'Text input description', 'download-renewals-for-woocommerce' ),
 			'default' => 'Default Text',
 		)
 	);
@@ -87,8 +87,8 @@ if ( class_exists( 'WP_OSA' ) ) {
 		array(
 			'id'                => 'text_no',
 			'type'              => 'number',
-			'name'              => __( 'Number Input', 'download-renewals-for-woocommerce' ),
-			'desc'              => __( 'Number field with validation callback `intval`', 'download-renewals-for-woocommerce' ),
+			'name'              => esc_attr__( 'Number Input', 'download-renewals-for-woocommerce' ),
+			'desc'              => esc_attr__( 'Number field with validation callback `intval`', 'download-renewals-for-woocommerce' ),
 			'default'           => 1,
 			'sanitize_callback' => 'intval',
 		)
@@ -100,8 +100,8 @@ if ( class_exists( 'WP_OSA' ) ) {
 		array(
 			'id'   => 'password',
 			'type' => 'password',
-			'name' => __( 'Password Input', 'download-renewals-for-woocommerce' ),
-			'desc' => __( 'Password field description', 'download-renewals-for-woocommerce' ),
+			'name' => esc_attr__( 'Password Input', 'download-renewals-for-woocommerce' ),
+			'desc' => esc_attr__( 'Password field description', 'download-renewals-for-woocommerce' ),
 		)
 	);
 
@@ -111,8 +111,8 @@ if ( class_exists( 'WP_OSA' ) ) {
 		array(
 			'id'   => 'textarea',
 			'type' => 'textarea',
-			'name' => __( 'Textarea Input', 'download-renewals-for-woocommerce' ),
-			'desc' => __( 'Textarea description', 'download-renewals-for-woocommerce' ),
+			'name' => esc_attr__( 'Textarea Input', 'download-renewals-for-woocommerce' ),
+			'desc' => esc_attr__( 'Textarea description', 'download-renewals-for-woocommerce' ),
 		)
 	);
 
@@ -131,7 +131,7 @@ if ( class_exists( 'WP_OSA' ) ) {
 		array(
 			'id'   => 'title',
 			'type' => 'title',
-			'name' => '<h1>' . __( 'Title', 'download-renewals-for-woocommerce' ) . '</h1>',
+			'name' => '<h1>' . esc_attr__( 'Title', 'download-renewals-for-woocommerce' ) . '</h1>',
 		)
 	);
 
@@ -141,8 +141,8 @@ if ( class_exists( 'WP_OSA' ) ) {
 		array(
 			'id'   => 'checkbox',
 			'type' => 'checkbox',
-			'name' => __( 'Checkbox', 'download-renewals-for-woocommerce' ),
-			'desc' => __( 'Checkbox Label', 'download-renewals-for-woocommerce' ),
+			'name' => esc_attr__( 'Checkbox', 'download-renewals-for-woocommerce' ),
+			'desc' => esc_attr__( 'Checkbox Label', 'download-renewals-for-woocommerce' ),
 		)
 	);
 
@@ -152,8 +152,8 @@ if ( class_exists( 'WP_OSA' ) ) {
 		array(
 			'id'      => 'radio',
 			'type'    => 'radio',
-			'name'    => __( 'Radio', 'download-renewals-for-woocommerce' ),
-			'desc'    => __( 'Radio Button', 'download-renewals-for-woocommerce' ),
+			'name'    => esc_attr__( 'Radio', 'download-renewals-for-woocommerce' ),
+			'desc'    => esc_attr__( 'Radio Button', 'download-renewals-for-woocommerce' ),
 			'options' => array(
 				'yes' => 'Yes',
 				'no'  => 'No',
@@ -167,8 +167,8 @@ if ( class_exists( 'WP_OSA' ) ) {
 		array(
 			'id'      => 'multicheck',
 			'type'    => 'multicheck',
-			'name'    => __( 'Multile checkbox', 'download-renewals-for-woocommerce' ),
-			'desc'    => __( 'Multile checkbox description', 'download-renewals-for-woocommerce' ),
+			'name'    => esc_attr__( 'Multile checkbox', 'download-renewals-for-woocommerce' ),
+			'desc'    => esc_attr__( 'Multile checkbox description', 'download-renewals-for-woocommerce' ),
 			'options' => array(
 				'yes' => 'Yes',
 				'no'  => 'No',
@@ -182,8 +182,8 @@ if ( class_exists( 'WP_OSA' ) ) {
 		array(
 			'id'      => 'select',
 			'type'    => 'select',
-			'name'    => __( 'A Dropdown', 'download-renewals-for-woocommerce' ),
-			'desc'    => __( 'A Dropdown description', 'download-renewals-for-woocommerce' ),
+			'name'    => esc_attr__( 'A Dropdown', 'download-renewals-for-woocommerce' ),
+			'desc'    => esc_attr__( 'A Dropdown description', 'download-renewals-for-woocommerce' ),
 			'options' => array(
 				'yes' => 'Yes',
 				'no'  => 'No',
@@ -197,8 +197,8 @@ if ( class_exists( 'WP_OSA' ) ) {
 		array(
 			'id'      => 'image',
 			'type'    => 'image',
-			'name'    => __( 'Image', 'download-renewals-for-woocommerce' ),
-			'desc'    => __( 'Image description', 'download-renewals-for-woocommerce' ),
+			'name'    => esc_attr__( 'Image', 'download-renewals-for-woocommerce' ),
+			'desc'    => esc_attr__( 'Image description', 'download-renewals-for-woocommerce' ),
 			'options' => array(
 				'button_label' => 'Choose Image',
 			),
@@ -211,8 +211,8 @@ if ( class_exists( 'WP_OSA' ) ) {
 		array(
 			'id'      => 'file',
 			'type'    => 'file',
-			'name'    => __( 'File', 'download-renewals-for-woocommerce' ),
-			'desc'    => __( 'File description', 'download-renewals-for-woocommerce' ),
+			'name'    => esc_attr__( 'File', 'download-renewals-for-woocommerce' ),
+			'desc'    => esc_attr__( 'File description', 'download-renewals-for-woocommerce' ),
 			'options' => array(
 				'button_label' => 'Choose file',
 			),
@@ -225,9 +225,9 @@ if ( class_exists( 'WP_OSA' ) ) {
 		array(
 			'id'          => 'color',
 			'type'        => 'color',
-			'name'        => __( 'Color', 'download-renewals-for-woocommerce' ),
-			'desc'        => __( 'Color description', 'download-renewals-for-woocommerce' ),
-			'placeholder' => __( '#5F4B8B', 'download-renewals-for-woocommerce' ),
+			'name'        => esc_attr__( 'Color', 'download-renewals-for-woocommerce' ),
+			'desc'        => esc_attr__( 'Color description', 'download-renewals-for-woocommerce' ),
+			'placeholder' => esc_attr__( '#5F4B8B', 'download-renewals-for-woocommerce' ),
 		)
 	);
 
@@ -237,8 +237,8 @@ if ( class_exists( 'WP_OSA' ) ) {
 		array(
 			'id'   => 'wysiwyg',
 			'type' => 'wysiwyg',
-			'name' => __( 'WP_Editor', 'download-renewals-for-woocommerce' ),
-			'desc' => __( 'WP_Editor description', 'download-renewals-for-woocommerce' ),
+			'name' => esc_attr__( 'WP_Editor', 'download-renewals-for-woocommerce' ),
+			'desc' => esc_attr__( 'WP_Editor description', 'download-renewals-for-woocommerce' ),
 		)
 	);
 }

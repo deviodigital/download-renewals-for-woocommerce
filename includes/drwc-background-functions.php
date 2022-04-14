@@ -26,7 +26,7 @@ function drwc_cron_schedules( $schedules ) {
 	if ( ! isset( $schedules['drwcDaily'] ) ) {
 		$schedules['drwcDaily'] = array(
 			'interval' => 86400,
-			'display'  => __( 'Once per day', 'download-renewals-for-woocommerce' )
+			'display'  => esc_attr__( 'Once per day', 'download-renewals-for-woocommerce' )
 		);
 	}
 	return $schedules;

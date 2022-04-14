@@ -726,7 +726,7 @@ if ( ! class_exists( 'WP_OSA' ) ) :
 
 		public function plugin_page() {
 			echo '<div class="wrap">';
-			echo '<h1>' . __( 'Download Renewals for WooCommerce', 'download-renewals-for-woocommerce' ) . ' <span style="font-size:50%;">v' . DRWC_VERSION . '</span></h1>';
+			echo '<h1>' . esc_attr__( 'Download Renewals for WooCommerce', 'download-renewals-for-woocommerce' ) . ' <span style="font-size:50%;">v' . DRWC_VERSION . '</span></h1>';
 			$this->show_navigation();
 			$this->show_forms();
 			echo '</div>';
