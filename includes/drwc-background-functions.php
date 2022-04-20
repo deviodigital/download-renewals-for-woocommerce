@@ -12,7 +12,7 @@
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
-	die;
+	wp_die();
 }
 
 /**
@@ -26,7 +26,7 @@ function drwc_cron_schedules( $schedules ) {
 	if ( ! isset( $schedules['drwcDaily'] ) ) {
 		$schedules['drwcDaily'] = array(
 			'interval' => 86400,
-			'display'  => __( 'Once per day', 'download-renewals-for-woocommerce' )
+			'display'  => esc_attr__( 'Once per day', 'download-renewals-for-woocommerce' )
 		);
 	}
 	return $schedules;

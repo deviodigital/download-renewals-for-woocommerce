@@ -13,7 +13,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+	wp_die(); // Exit if accessed directly.
 }
 
 if ( ! class_exists( 'WC_Email' ) ) {
@@ -35,12 +35,12 @@ class WC_Order_Download_Expired extends WC_Email {
 	function __construct() {
 		// Email slug we can use to filter other data.
 		$this->id          = 'drwc_download_expired';
-		$this->title       = __( 'DRWC Download Expired', 'download-renewals-for-woocommerce' );
-		$this->description = __( 'An email sent to the customer when a downloadable item they\'ve purchased is expired', 'download-renewals-for-woocommerce' );
+		$this->title       = esc_attr__( 'DRWC Download Expired', 'download-renewals-for-woocommerce' );
+		$this->description = esc_attr__( 'An email sent to the customer when a downloadable item they\'ve purchased is expired', 'download-renewals-for-woocommerce' );
 
 		// For admin area to let the admin know we are sending this email to customers.
 		$this->customer_email = true;
-		$this->heading        = __( 'Download Expired', 'download-renewals-for-woocommerce' );
+		$this->heading        = esc_attr__( 'Download Expired', 'download-renewals-for-woocommerce' );
 
 		// translators: placeholder is {blogname}, a variable that will be substituted when email is sent out
 		$this->subject = sprintf( _x( '[%s] A download you purchased has expired', 'default email subject for customers when a purchased download is expired', 'download-renewals-for-woocommerce' ), '{blogname}' );

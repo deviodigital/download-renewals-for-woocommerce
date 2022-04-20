@@ -5,11 +5,11 @@
  * @since 1.0
  */
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+	wp_die();
 }
 
 echo "= " . $email_heading . " =\n\n";
-echo sprintf( __( 'Order #%d has products with expired downloads.', 'download-renewals-for-woocommerce' ), $order->id ) . "\n\n";
+echo sprintf( esc_attr__( 'Order #%d has products with expired downloads.', 'download-renewals-for-woocommerce' ), $order->id ) . "\n\n";
 echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n\n";
 /**
  * @hooked WC_Emails::order_details() Shows the order details table.

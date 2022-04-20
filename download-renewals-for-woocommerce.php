@@ -24,7 +24,7 @@
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
-	die;
+	wp_die();
 }
 
 // Current plugin version.
@@ -39,7 +39,11 @@ $plugin_name = plugin_basename( __FILE__ );
  */
 function activate_download_renewals_for_woocommerce() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-download-renewals-for-woocommerce-activator.php';
+<<<<<<< HEAD
 	Download_Renewals_For_WooCommerce_Activator::activate();
+=======
+	DownloadRenewalsForWooCommerceActivator::activate();
+>>>>>>> feature/codacy-coding-standards-updates
 }
 
 /**
@@ -48,7 +52,11 @@ function activate_download_renewals_for_woocommerce() {
  */
 function deactivate_download_renewals_for_woocommerce() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-download-renewals-for-woocommerce-deactivator.php';
+<<<<<<< HEAD
 	Download_Renewals_For_WooCommerce_Deactivator::deactivate();
+=======
+	DownloadRenewalsForWooCommerceDeactivator::deactivate();
+>>>>>>> feature/codacy-coding-standards-updates
 }
 
 register_activation_hook( __FILE__, 'activate_download_renewals_for_woocommerce' );
@@ -71,7 +79,11 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-download-renewals-for-wooc
  */
 function run_download_renewals_for_woocommerce() {
 
+<<<<<<< HEAD
 	$plugin = new Download_Renewals_For_WooCommerce();
+=======
+	$plugin = new DownloadRenewalsForWooCommerce();
+>>>>>>> feature/codacy-coding-standards-updates
 	$plugin->run();
 
 }

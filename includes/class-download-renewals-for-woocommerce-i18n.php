@@ -41,7 +41,4 @@ class Download_Renewals_For_WooCommerce_i18n {
 		);
 
 	}
-
-
-
 }

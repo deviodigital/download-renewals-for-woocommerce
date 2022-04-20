@@ -15,7 +15,7 @@
  * @version 3.4.0
  */
 
-defined( 'ABSPATH' ) || exit;
+defined( 'ABSPATH' ) || wp_die();
 
 $text_align = is_rtl() ? 'right' : 'left';
 
@@ -46,7 +46,7 @@ $text_align = is_rtl() ? 'right' : 'left';
 								break;
 							case 'download-file':
 								if ( strtotime( $download['access_expires'] ) < strtotime( 'now' ) ) {
-									echo '<span style="color:#FF0000;">' . __( 'Expired', 'download-renewals-for-woocommerce' ) . '</span>';
+									echo '<span style="color:#FF0000;">' . esc_attr__( 'Expired', 'download-renewals-for-woocommerce' ) . '</span>';
 								} else {
 								?>
 								<a href="<?php echo esc_url( $download['download_url'] ); ?>" class="woocommerce-MyAccount-downloads-file button alt"><?php echo esc_html( $download['download_name'] ); ?></a>
