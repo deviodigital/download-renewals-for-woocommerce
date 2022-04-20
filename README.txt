@@ -3,7 +3,7 @@ Contributors: deviodigital
 Donate link: https://www.deviodigital.com
 Tags: woocommerce, downloads, renewals, subscription, recurring
 Tested up to: 5.9.2
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,6 +47,10 @@ Learn more at [Customer Loyalty for WooCommerce](https://www.wordpress.org/plugi
 3.   Product prices are automatically updated if customer already purchased the product
 
 == Changelog ==
+
+= 1.0.2 =
+*   Updated class names to user proper camel casing throughout multiple files in the plugin
+*   Updated various security related issues found with [Codacy](https://codacy.com) throughout multiple files in the plugin
 
 = 1.0.1 =
 *   Added `drwc_add_renewal_metadata_to_order` function to add renewal metadata to WooComerce order data in `includes/drwc-core-functions.php`

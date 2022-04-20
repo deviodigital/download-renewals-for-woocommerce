@@ -11,7 +11,7 @@
  * Plugin Name:          Download Renewals for WooCommerce
  * Plugin URI:           https://www.deviodigital.com/download-renewals-for-woocommerce-release-notes
  * Description:          Sell digital products and remind your customers when their downloads expire
- * Version:              1.0.1
+ * Version:              1.0.2
  * Author:               Devio Digital
  * Author URI:           https://www.deviodigital.com
  * License:              GPL-2.0+
@@ -28,7 +28,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Current plugin version.
-define( 'DRWC_VERSION', '1.0.1' );
+define( 'DRWC_VERSION', '1.0.2' );
 
 // Define DRWC plugin name.
 $plugin_name = plugin_basename( __FILE__ );
@@ -39,11 +39,7 @@ $plugin_name = plugin_basename( __FILE__ );
  */
 function activate_download_renewals_for_woocommerce() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-download-renewals-for-woocommerce-activator.php';
-<<<<<<< HEAD
 	Download_Renewals_For_WooCommerce_Activator::activate();
-=======
-	DownloadRenewalsForWooCommerceActivator::activate();
->>>>>>> feature/codacy-coding-standards-updates
 }
 
 /**
@@ -52,11 +48,7 @@ function activate_download_renewals_for_woocommerce() {
  */
 function deactivate_download_renewals_for_woocommerce() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-download-renewals-for-woocommerce-deactivator.php';
-<<<<<<< HEAD
 	Download_Renewals_For_WooCommerce_Deactivator::deactivate();
-=======
-	DownloadRenewalsForWooCommerceDeactivator::deactivate();
->>>>>>> feature/codacy-coding-standards-updates
 }
 
 register_activation_hook( __FILE__, 'activate_download_renewals_for_woocommerce' );
@@ -79,11 +71,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-download-renewals-for-wooc
  */
 function run_download_renewals_for_woocommerce() {
 
-<<<<<<< HEAD
 	$plugin = new Download_Renewals_For_WooCommerce();
-=======
-	$plugin = new DownloadRenewalsForWooCommerce();
->>>>>>> feature/codacy-coding-standards-updates
 	$plugin->run();
 
 }
