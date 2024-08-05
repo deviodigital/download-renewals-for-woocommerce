@@ -18,7 +18,7 @@
  */
 function drwc_check_orders_for_expired_downloads() {
 	// Get WooCommerce orders.
-	$orders = wc_get_orders( array( 'numberposts' => -1 ) );
+	$orders = wc_get_orders( [ 'numberposts' => -1 ] );
 
 	// Loop through each WC_Order object
 	foreach( $orders as $order ) {
@@ -215,7 +215,7 @@ function drwc_add_renewal_metadata_to_order( $order_id ) {
 		$user_id = $order->get_user_id();
 
 		// Create product data.
-		$product_data = array();
+		$product_data = [];
 
 		// Loop through order items.
 		foreach ( $order->get_items() as $item ) {
@@ -227,13 +227,13 @@ function drwc_add_renewal_metadata_to_order( $order_id ) {
 
 			// Renewal price.
 			if ( get_post_meta( $product_id, 'drwc_renewal_price', true ) ) {
-				// Check if user has bought the item before. @todo look at changing $post_id to $product_id
-				if ( drwc_user_has_bought_items( $user_id, $post_id ) ) {
-					$product_data[] = array(
+				// Check if user has bought the item before.
+				if ( drwc_user_has_bought_items( $user_id, $product_id ) ) {
+					$product_data[] = [
 						'product_id'     => $product_id,
 						'product_price'  => $product->price,
 						'discount_price' => get_post_meta( $product_id, 'drwc_renewal_price', true )
-					);
+					];
 				}
 			}
 		}
@@ -260,10 +260,10 @@ add_action( 'woocommerce_thankyou', 'drwc_add_renewal_metadata_to_order', 10, 1 
  */
 function drwc_orders_with_download_renewals() {
 	// Order query.
-	$query = new WC_Order_Query( array(
+	$query = new WC_Order_Query( [
 		'limit'  => -1,
 		'return' => 'ids',
-	) );
+	] );
 	// Get orders.
 	$orders = $query->get_orders();
 	// Loop through orders.
@@ -273,7 +273,7 @@ function drwc_orders_with_download_renewals() {
 		// Only run if renewals are present.
 		if ( $is_renewal ) {
 			// Create array.
-			$renewal_order = array();
+			$renewal_order = [];
 			// Loop through renewal(s).
 			foreach ( $is_renewal as $renewal ) {
 				// Add discount price to array.

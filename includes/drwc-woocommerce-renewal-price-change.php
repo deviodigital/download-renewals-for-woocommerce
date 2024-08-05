@@ -21,13 +21,8 @@ if ( ! defined( 'WPINC' ) ) {
  * @return string $price
  */ 
 function drwc_renewal_price_display( $price, $product ) {
-	global $post;
-
 	// Post ID.
-	$post_id = $post->ID;
-
-	// Product data.
-	$product = wc_get_product( $post_id );
+	$post_id = $product->get_id();
 
 	// Get current user data.
 	$current_user = wp_get_current_user();
@@ -41,7 +36,7 @@ function drwc_renewal_price_display( $price, $product ) {
 
 	return $price;
 }
-add_filter( 'woocommerce_get_price', 'drwc_renewal_price_display', 10, 2 );
+add_filter( 'woocommerce_product_get_price', 'drwc_renewal_price_display', 10, 2 );
 
 /**
  * Alter product renewal price in cart

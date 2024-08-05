@@ -23,7 +23,7 @@ if ( ! defined( 'WPINC' ) ) {
 function drwc_downloadable_product_option_group() {
 	echo '<div class="options_group show_if_downloadable hidden">';
 
-	$args = array(
+	$args = [
 		'label'             => esc_attr__( 'Renewal Price ', 'download-renewals-for-woocommerce' ) . '(' . get_woocommerce_currency_symbol() . ')',
 		'placeholder'       => '',
 		'class'             => 'short wc_input_price',
@@ -36,12 +36,12 @@ function drwc_downloadable_product_option_group() {
 		'desc_tip'          => '',
 		'data_type'         => '',
 		'description'       => '',
-		'custom_attributes' => array(
+		'custom_attributes' => [
 			'step' => 'any',
 			'min'  => '0'
-		),
+        ],
 
-	);
+	];
 
 	woocommerce_wp_text_input( $args );
 

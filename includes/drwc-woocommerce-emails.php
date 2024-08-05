@@ -52,7 +52,7 @@ class Download_Renewals_for_WooCommerce_WC_Emails {
 	 */
 	public function __construct() {
 		// Filtering the emails and adding our own email.
-		add_filter( 'woocommerce_email_classes', array( $this, 'register_emails' ), 15, 1 );
+		add_filter( 'woocommerce_email_classes', [ $this, 'register_emails' ], 15, 1 );
 		// Absolute path to the plugin folder.
 		define( 'DRWC_PRO_EMAIL_PATH', plugin_dir_path( __FILE__ ) );
 	}

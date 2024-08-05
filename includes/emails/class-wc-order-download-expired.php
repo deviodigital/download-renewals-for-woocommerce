@@ -51,7 +51,7 @@ class WC_Order_Download_Expired extends WC_Email {
 		$this->template_base  = DRWC_PRO_EMAIL_PATH . 'emails/templates/';
 
 		// Action to which we hook onto to send the email.
-		add_action( 'drwc_download_expired_trigger_email', array( $this, 'trigger' ) );
+		add_action( 'drwc_download_expired_trigger_email', [ $this, 'trigger' ] );
 		parent::__construct();
 
 		if ( ! $this->recipient ) {
@@ -94,13 +94,13 @@ class WC_Order_Download_Expired extends WC_Email {
 	 * @return string
 	 */
 	public function get_content_html() {
-		return wc_get_template_html( $this->template_html, array(
+		return wc_get_template_html( $this->template_html, [
 			'order'         => $this->object,
 			'email_heading' => $this->get_heading(),
 			'sent_to_admin' => false,
 			'plain_text'    => false,
 			'email'			=> $this
-		), '', $this->template_base );
+		], '', $this->template_base );
 	}
 
 	/**
@@ -109,13 +109,13 @@ class WC_Order_Download_Expired extends WC_Email {
 	 * @return string
 	 */
 	public function get_content_plain() {
-		return wc_get_template_html( $this->template_plain, array(
+		return wc_get_template_html( $this->template_plain, [
 			'order'         => $this->object,
 			'email_heading' => $this->get_heading(),
 			'sent_to_admin' => false,
 			'plain_text'    => true,
 			'email'         => $this
-		), '', $this->template_base );
+		], '', $this->template_base );
   }
 
 }

@@ -24,10 +24,10 @@ if ( ! defined( 'WPINC' ) ) {
 function drwc_cron_schedules( $schedules ) {
 	// Daily cron check.
 	if ( ! isset( $schedules['drwcDaily'] ) ) {
-		$schedules['drwcDaily'] = array(
+		$schedules['drwcDaily'] = [
 			'interval' => 86400,
 			'display'  => esc_attr__( 'Once per day', 'download-renewals-for-woocommerce' )
-		);
+		];
 	}
 	return $schedules;
 }
